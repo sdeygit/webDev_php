@@ -34,5 +34,5 @@
     echo "<br>";
     echo "<br>";
 
-    echo "This is another text.";
+    echo "This is another new line.";
 ?>
