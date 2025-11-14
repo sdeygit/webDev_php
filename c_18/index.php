@@ -25,4 +25,9 @@
     echo "<br>";
 
     echo "File modified!"
+
+    echo "<br>";
+    echo "<br>";
+
+    echo "This is a new text.";
 ?>
