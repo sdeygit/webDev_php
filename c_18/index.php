@@ -30,4 +30,9 @@
     echo "<br>";
 
     echo "This is a new text.";
+
+    echo "<br>";
+    echo "<br>";
+
+    echo "This is another text.";
 ?>
