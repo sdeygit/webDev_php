@@ -1,0 +1,162 @@
+## C - 17 ##
+============
+
+INSERT : 
+------
+
+INSERT INTO `user` (`u_id`, `name`, `country`, `date_of_birth`) VALUES (NULL, 'Abc Def', 'Bangladesh', '2024-07-01');
+
+========================================================
+
+
+SELECT : 
+------
+
+SELECT `country` FROM `user`
+
+SELECT DISTINCT `country` FROM `user`
+
+SELECT COUNT(`country`) FROM `user`
+
+SELECT COUNT(DISTINCT `country`) FROM `user`
+
+SELECT COUNT(`country`) FROM `user` WHERE `country` = "Bangladesh"
+
+SELECT `name` FROM `user` WHERE `country` IN ('USA','UK')
+
+SELECT `name` FROM `user` WHERE `country` = 'USA' OR `country` = 'UK'
+
+SELECT `name` FROM `user` WHERE `country` = 'USA' OR `country` = 'UK' OR `country` = 'Italy'
+
+SELECT `name` FROM `user` WHERE `country` = 'Bangladesh' OR `district` = 'New York'
+
+SELECT `name` FROM `user` WHERE `country` = 'Bangladesh' AND `district` = 'Khulna'
+
+SELECT * FROM `user` ORDER BY `u_id` DESC
+
+SELECT * FROM `user` ORDER BY `country` ASC
+
+SELECT MAX(`salary`) FROM `user`
+
+SELECT `name` FROM `user` WHERE `salary` = (SELECT MAX(`salary`) FROM `user`)
+
+SELECT `name` FROM `user` WHERE `salary` = (SELECT MIN(`salary`) FROM `user`)
+
+SELECT SUM(`salary`) FROM `user`
+
+SELECT AVG(`salary`) FROM `user`
+
+SELECT *, YEAR(CURDATE()) - YEAR(`date_of_birth`) AS age FROM `user`  (age is derived attribute)
+
+SELECT `name`, YEAR(CURDATE()) - YEAR(`date_of_birth`) AS age FROM `user`
+
+========================================================
+
+
+UPDATE :
+------
+
+UPDATE `user` SET `District` = 'Dhaka' WHERE `user`.`u_id` = 1;
+
+========================================================
+
+
+## C - 18 ##
+============
+
+JOIN :
+----
+
+Assigining Foreign Key :
+
+Structure >>> 
+
+Column name --> More --> Index
+
+ALTER TABLE `product_order` ADD INDEX(`p_id`);
+ALTER TABLE `product_order` ADD INDEX(`u_id`);
+
+
+Relation view (product_order table) >>> 
+
+# 1 #
+	
+ON DELETE --> RESTRICT	
+ON UPDATE --> CASCADE
+
+Column --> p_id (product id of product_order table)
+Database --> shop_prac
+Table --> product
+Column --> p_id (product id of product table)
+
+ALTER TABLE `product_order` ADD FOREIGN KEY (`p_id`) REFERENCES `product`(`p_id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+# 2 # 
+
+ON DELETE --> RESTRICT	
+ON UPDATE --> CASCADE
+
+Column --> u_id (product id of product_order table)
+Database --> shop_prac
+Table --> user
+Column --> u_id (user id of user table)
+
+ALTER TABLE `product_order` ADD FOREIGN KEY (`u_id`) REFERENCES `user`(`u_id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+------------------------------------------
+
+INSERT INTO `product_order` (`o_id`, `p_id`, `u_id`, `date`, `quantity`) VALUES (NULL, '1', '6', '2025-11-05', '10'), (NULL, '2', '7', '2025-11-10', '3');
+
+Joining :
+-------
+
+INNER JOIN :-
+
+# 1 #
+
+SELECT user.name, product.name AS product_name
+FROM product_order
+INNER JOIN user ON product_order.u_id = user.u_id
+INNER JOIN product ON product_order.p_id = product.p_id
+
+# 2 #
+
+SELECT user.name, product.name AS product_name, product.price
+FROM product_order
+INNER JOIN user ON product_order.u_id = user.u_id
+INNER JOIN product ON product_order.p_id = product.p_id
+WHERE product.price > 3000
+
+# 3 #
+
+SELECT user.name, product.name AS product_name, product.price, product_order.quantity, product_order.quantity*product.price AS total_price
+FROM product_order
+INNER JOIN user ON product_order.u_id = user.u_id
+INNER JOIN product ON product_order.p_id = product.p_id
+WHERE product.price > 3000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

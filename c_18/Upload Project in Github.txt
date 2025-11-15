@@ -1,0 +1,235 @@
+## How to upload content/folder/file in Github ##
+=================================================
+
+>>	Log in to the Github account and create a 'Repository'.
+
+		Process :- 
+		-------
+	
+		Click on 'Repository'
+	
+		Click 'New'.
+		
+		Type a 'Repository name' [webDev_php].
+	
+		Type a description of the Repository. [Not recommended]
+	
+		Allowing 'Add README', 'Add .gitignore' and 'Add license' are not necessary.
+	
+		Click on 'Create repository'. Thus a webDev_php repository will be created.
+
+>>	Go to the folder where the content located which is to be uploaded.
+
+>>	Right click any where inside the folder.
+
+>>	Click on 'Open Git Bash here'.
+
+>>	Type "git init" to initialize git and press Enter. A hidden folder named '.git' will be created which indicats that, 'git' has been initialized.
+
+	Output :-
+	------
+	
+	Initialized empty Git repository in C:/xampp/htdocs/eShikhon/.git/
+
+	ROWTECH@DESKTOP-5DUJQLT MINGW64 /c/xampp/htdocs/eShikhon (master)
+	$ 
+		
+>>	To check the status type 'git status' and press Enter.
+
+	Output :-
+	------
+	
+	On branch master
+
+	No commits yet
+
+	Untracked files:
+	  (use "git add <file>..." to include in what will be committed)
+			c_18/
+
+	nothing added to commit but untracked files present (use "git add" to track)
+	
+	ROWTECH@DESKTOP-5DUJQLT MINGW64 /c/xampp/htdocs/eShikhon (master)
+	$ 
+	
+	*	'c_18/' written in red font means 'c_18' folder is not added yet.
+		
+>>	To add this in Github type 'git add .' and press Enter.
+
+>>	To check the status type 'git status' and press Enter.
+
+	Output :-
+	------
+
+	On branch master
+
+	No commits yet
+
+	Changes to be committed:
+	  (use "git rm --cached <file>..." to unstage)
+			new file:   c_18/index.php
+			
+	*	Here 'new file:   c_18/index.php' written in green font means 'c_18' folder has been added.
+	
+>>	To save this activity type 'git commit -m "index.php is added in c_18 folder"' and press Enter. Here 'm' means modified and the text inside double quotes is a comment to identify the activity easily.
+
+	Output :-
+	------
+
+	[master (root-commit) 20bab0d] index.php is added in c_18 folder
+	 1 file changed, 25 insertions(+)
+	 create mode 100644 c_18/index.php
+
+>>	Type 'git branch -M main' and press Enter. It will change the branch from 'master' to 'main'.
+
+	Output :-
+	------
+	
+	ROWTECH@DESKTOP-5DUJQLT MINGW64 /c/xampp/htdocs/eShikhon (main)
+	$ 
+
+>>	To check this status type 'git status' and press Enter.
+
+	Output :-
+	------
+
+	On branch main
+	nothing to commit, working tree clean
+	
+>>	To identify the location/repository where the content to be uploaded type 'git remote add origin https://github.com/sdeygit/webDev_php.git' and press Enter.
+
+>>	To push the content into the repository for the first time type 'git push -u origin main' and press Enter. It'll take some time to be uploaded.
+
+	Output :-
+	------
+	
+	Enumerating objects: 4, done.
+	Counting objects: 100% (4/4), done.
+	Delta compression using up to 12 threads
+	Compressing objects: 100% (2/2), done.
+	Writing objects: 100% (4/4), 490 bytes | 490.00 KiB/s, done.
+	Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+	To https://github.com/sdeygit/webDev_php.git
+	 * [new branch]      main -> main
+	branch 'main' set up to track 'origin/main'.
+	
+	
+## How to upload a modified content/folder/file in Github ##
+============================================================
+	
+>>	Make some changes in index.php file and save it.
+
+>>	Type 'git add .' and press Enter.	
+
+>>	Type git commit -m "New text added in index.php file"
+
+	Output :-
+	------
+	
+	[main 36d5d4f] New text added in index.php file
+	 1 file changed, 5 insertions(+)
+
+>>	For pussing the updated file type only 'git push' and press Enter.
+
+	Output :-
+	------
+
+	Enumerating objects: 7, done.
+	Counting objects: 100% (7/7), done.
+	Delta compression using up to 12 threads
+	Compressing objects: 100% (2/2), done.
+	Writing objects: 100% (4/4), 369 bytes | 369.00 KiB/s, done.
+	Total 4 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+	remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+	To https://github.com/sdeygit/webDev_php.git
+	   6d7ddbb..36d5d4f  main -> main
+	   
+	   
+## How to check the change/difference made in file ##
+=====================================================
+
+>>	Type 'git diff' and press Enter to check the change/difference in the file.
+
+	Output :-
+	------
+
+	diff --git a/c_18/index.php b/c_18/index.php
+	index 18ee8df..229bad5 100644
+	--- a/c_18/index.php
+	+++ b/c_18/index.php
+	@@ -34,5 +34,5 @@
+		 echo "<br>";
+		 echo "<br>";
+
+	-    echo "This is another text.";
+	+    echo "This is another new line.";
+	 ?>
+	\ No newline at end of file
+	
+	*	It indecates the line has been changed from 'echo "This is another text."' to 'echo "This is another new line."'
+	   
+	   
+## How to create a new Branch in Github and upload file ##
+==========================================================
+
+>>	To create a new Branch type 'git checkout -b php' and press Enter.
+
+	Output :-
+	------
+	
+	Switched to a new branch 'php'
+	ROWTECH@DESKTOP-5DUJQLT MINGW64 /c/xampp/htdocs/eShikhon (php)
+	$
+	
+	* 	In this case a new branch will be created and 'main' will be changed to 'php'.
+	
+>>	Type 'git add .' and press Enter.
+
+>>	To ype 'git commit -m "Change made in index.php file"' and press Enter.
+
+	Output :-
+	------
+
+	[php d659fc2] Change made in index.php file
+	 1 file changed, 1 insertion(+), 1 deletion(-)
+	 
+>>	To push the file in 'php' Branch type 'git push --set-upstream origin php' and press Enter.
+
+	Output :-
+	------
+	
+	Enumerating objects: 7, done.
+	Counting objects: 100% (7/7), done.
+	Delta compression using up to 12 threads
+	Compressing objects: 100% (2/2), done.
+	Writing objects: 100% (4/4), 337 bytes | 337.00 KiB/s, done.
+	Total 4 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+	remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+	remote:
+	remote: Create a pull request for 'php' on GitHub by visiting:
+	remote:      https://github.com/sdeygit/webDev_php/pull/new/php
+	remote:
+	To https://github.com/sdeygit/webDev_php.git
+	 * [new branch]      php -> php
+	branch 'php' set up to track 'origin/php'.
+
+
+	
+
+
+
+
+
+
+	
+
+
+
+
+	
+	
+	
+	
+	
+
+
