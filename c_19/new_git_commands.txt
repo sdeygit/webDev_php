@@ -1,0 +1,165 @@
+>>	Type 'git status' and press Enter.
+
+	Output :-
+	------
+	
+	ROWTECH@DESKTOP-5DUJQLT MINGW64 /c/xampp/htdocs/eShikhon (php)
+	$ git status
+	On branch php
+	Your branch is up to date with 'origin/php'.
+
+	Changes not staged for commit:
+	  (use "git add <file>..." to update what will be committed)
+	  (use "git restore <file>..." to discard changes in working directory)
+			modified:   c_18/index.php
+
+	Untracked files:
+	  (use "git add <file>..." to include in what will be committed)
+			c_18/Upload Project in Github.txt
+			c_18/desktop.ini
+			c_18/index_main.php
+			c_18/index_php.php
+			c_18/mysql_query_2.txt
+			c_18/shop_prac.sql
+			c_18/source file.zip
+			c_19/
+
+	no changes added to commit (use "git add" and/or "git commit -a")
+	
+>>	Type 'git diff' and press Enter to check the difference/change.
+
+	Output :-
+	------
+	
+	ROWTECH@DESKTOP-5DUJQLT MINGW64 /c/xampp/htdocs/eShikhon (php)
+	$ git diff
+	diff --git a/c_18/index.php b/c_18/index.php
+	index 229bad5..590ef31 100644
+	--- a/c_18/index.php
+	+++ b/c_18/index.php
+	@@ -22,17 +22,4 @@
+		 echo $a, $b, $c . "<br>";   // echo can handle multiple arguement at a time before concatenation. echo is first.
+
+		 // print $a, $b, $c . "<br>";   // print can't handle multiple arguement
+	-    echo "<br>";
+	-
+	-    echo "File modified!"
+	-
+	-    echo "<br>";
+	-    echo "<br>";
+	-
+	-    echo "This is a new text.";
+	-
+	-    echo "<br>";
+	-    echo "<br>";
+	-
+	-    echo "This is another new line.";
+	 ?>
+	 
+>> Press "q" button if no next tag press return problem in Git Bash. 
+
+>>	Type 'git add .' and press Enter.
+
+	Output :-
+	------
+
+	ROWTECH@DESKTOP-5DUJQLT MINGW64 /c/xampp/htdocs/eShikhon (php)
+	$ git add .
+	warning: in the working copy of 'c_18/shop_prac.sql', LF will be replaced by CRLF the next time Git touches it
+	
+>>	Type 'git commit -m "fizbuzz problem solved in c_19"' and press Enter.
+
+	Output :-
+	------
+
+	ROWTECH@DESKTOP-5DUJQLT MINGW64 /c/xampp/htdocs/eShikhon (php)
+	$ git commit -m "fizbuzz problem solved in c_19"
+	[php 3319b28] fizbuzz problem solved in c_19
+	 10 files changed, 675 insertions(+), 13 deletions(-)
+	 create mode 100644 c_18/Upload Project in Github.txt
+	 create mode 100644 c_18/desktop.ini
+	 create mode 100644 c_18/index_main.php
+	 create mode 100644 c_18/index_php.php
+	 create mode 100644 c_18/mysql_query_2.txt
+	 create mode 100644 c_18/shop_prac.sql
+	 create mode 100644 c_18/source file.zip
+	 create mode 100644 c_19/fizzbuzz.php
+	 create mode 100644 c_19/source file.zip
+	 
+>>	Type 'git log' and press Enter to check the activity log.	 
+
+	Output :-
+	------
+
+	ROWTECH@DESKTOP-5DUJQLT MINGW64 /c/xampp/htdocs/eShikhon (php)
+	$ git log
+	commit 3319b28aae7156dd3624064b54d44c4ab2c22618 (HEAD -> php)
+	Author: sdeygit <sdey.jnu@gmail.com>
+	Date:   Sat Nov 15 21:38:32 2025 +0600
+
+		fizbuzz problem solved in c_19
+
+	commit d659fc25f4b4e97d2cef16961a6b214435ee1f4f (origin/php)
+	Author: sdeygit <sdey.jnu@gmail.com>
+	Date:   Fri Nov 14 15:13:03 2025 +0600
+
+		Change made in index.php file
+
+	commit 7f0d74349d5c39bc9354ccbf7bbe1da8c2cdd14a (origin/main, main)
+	Author: sdeygit <sdey.jnu@gmail.com>
+	Date:   Fri Nov 14 14:46:31 2025 +0600
+
+		Another text added in index.php file
+
+	commit 36d5d4f95ea6d7471f45d1df95e129ac792a69e8
+	Author: sdeygit <sdey.jnu@gmail.com>
+	Date:   Fri Nov 14 14:38:19 2025 +0600
+
+		New text added in index.php file
+	:
+	commit 3319b28aae7156dd3624064b54d44c4ab2c22618 (HEAD -> php)
+	Author: sdeygit <sdey.jnu@gmail.com>
+	Date:   Sat Nov 15 21:38:32 2025 +0600
+
+		fizbuzz problem solved in c_19
+
+	commit d659fc25f4b4e97d2cef16961a6b214435ee1f4f (origin/php)
+	Author: sdeygit <sdey.jnu@gmail.com>
+	Date:   Fri Nov 14 15:13:03 2025 +0600
+
+		Change made in index.php file
+
+	commit 7f0d74349d5c39bc9354ccbf7bbe1da8c2cdd14a (origin/main, main)
+	Author: sdeygit <sdey.jnu@gmail.com>
+	Date:   Fri Nov 14 14:46:31 2025 +0600
+
+		Another text added in index.php file
+
+	commit 36d5d4f95ea6d7471f45d1df95e129ac792a69e8
+	Author: sdeygit <sdey.jnu@gmail.com>
+	Date:   Fri Nov 14 14:38:19 2025 +0600
+
+		New text added in index.php file
+	
+>>	Type 'git push' to pish it in Github.	
+
+	Output :-
+	------
+	
+	ROWTECH@DESKTOP-5DUJQLT MINGW64 /c/xampp/htdocs/eShikhon (php)	
+	$ git push
+	Enumerating objects: 16, done.
+	Counting objects: 100% (16/16), done.
+	Delta compression using up to 12 threads
+	Compressing objects: 100% (13/13), done.
+	Writing objects: 100% (13/13), 6.06 KiB | 3.03 MiB/s, done.
+	Total 13 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+	remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+	To https://github.com/sdeygit/webDev_php.git
+	   d659fc2..3319b28  php -> php
+
+
+
+
+	
+	
